@@ -28,10 +28,12 @@ def obtener_tabla():
     return monedas
 
 @app.get("/")
+@app.head("/")
 def root():
     return {"status": "ok", "info": "API Cotizacion USD - CSJ Paraguay"}
 
 @app.get("/usd")
+@app.head("/usd")
 def get_usd():
     try:
         monedas = obtener_tabla()
